@@ -1,0 +1,22 @@
+This code derives numerical implementations from CoNFiLD:
+https://github.com/jx-wang-s-group/CoNFiLD
+Conditional neural field latent diffusion model for generating spatiotemporal
+turbulence, Nature Communications 15, 10416 (2024).
+
+Copyright 2026 CoNFiLD-LSKP contributors, for their original additions and
+modifications. Those contributions are licensed under Apache-2.0; see LICENSE.
+Original third-party copyright and license notices remain applicable.
+
+LICENSE.upstream retains the supplied upstream Apache License 2.0 text.
+Existing source headers and notices are preserved. This repository adds portable
+entry points, relative configuration paths and evaluation tools.
+Modified upstream files carry modification notices. Their source mapping
+and inherited third-party code licenses are in third_party_licenses/README.md.
+The original MIT texts for inherited diffusion, attention-pooling and logging
+code are retained there; these are not new runtime dependencies or API services.
+
+The original data and upstream pretrained models are separate assets with their
+own distribution terms. Retaining an upstream code license does not relicense
+those assets. The original CoNFiLD data and upstream model archive specify
+CC BY 4.0; see docs/PROVENANCE.md for their creators and source records.
+These code notices do not relicense data or weights.

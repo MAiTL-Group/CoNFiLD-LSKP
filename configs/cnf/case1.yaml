@@ -1,0 +1,33 @@
+data_path: data/raw/case1/data.npy
+load_data_fn: load_elbow_flow
+save_path: outputs/cnf/case1/sn
+coor_path: data/raw/case1/coords.npy
+lumped_latent: true
+normalizer:
+  method: '-11'
+  dim: 0
+batch_size: 64
+test_batch_size: 256
+multiGPU: 1
+seed: 42
+deterministic: false
+readin_data_shape: t N c
+batch_shape: t N c
+hidden_size: 128
+epochs: 9805
+loss_fn: MSELoss
+test_criteria: rMAE
+save_every: 5
+dims: 2
+NF:
+  name: SIRENAutodecoder_film
+  num_hidden_layers: 10
+  out_features: 3
+  hidden_features: 128
+  use_sn: true
+  sn_coeff: 1.0
+  sn_power_iter: 1
+lr:
+  nf: 0.0001
+  latents: 1.0e-05
+enable_swanlab: false

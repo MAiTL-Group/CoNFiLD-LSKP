@@ -1,0 +1,25 @@
+image_size: 256
+num_channels: 128
+num_res_blocks: 2
+num_heads: 4
+num_head_channels: 64
+attention_resolutions: 32,16,8
+steps: 1000
+noise_schedule: cosine
+latent_length: 256
+case: case2
+model: lskp
+test_batch_size: 3
+time_length: 768
+seed: 42
+ema_path: outputs/diffusion/case2/lskp/ema_0.9999_best.pt
+cnf_config: configs/cnf/case2.yaml
+cnf_checkpoint: "<CNF_CHECKPOINT>"
+cnf_normalizer: outputs/cnf/case2/sn/normalizer_params.pt
+min_val: outputs/diffusion/case2/lskp/minmax/latent_min.npy
+max_val: outputs/diffusion/case2/lskp/minmax/latent_max.npy
+save_dir: outputs/samples/case2/lskp
+decode_batch_size: 1
+grid_shape:
+- 400
+- 100

@@ -1,0 +1,71 @@
+batch_size: 16
+test_batch_size: 16
+time_length: 256
+latent_length: 256
+image_size: 256
+num_channels: 128
+num_res_blocks: 2
+num_heads: 4
+num_head_channels: 64
+attention_resolutions: 32,16,8
+channel_mult: null
+steps: 1000
+noise_schedule: cosine
+max_val: outputs/diffusion/case3/lskp/minmax/latent_max.npy
+min_val: outputs/diffusion/case3/lskp/minmax/latent_min.npy
+microbatch: -1
+lr: 5.0e-05
+ema_rate: '0.9999'
+log_interval: 500
+save_interval: 5000
+lr_anneal_steps: 0
+max_train_steps: 270000
+valid_interval: 1000
+valid_t_seed: 42
+best_ckpt:
+  enabled: true
+  metric: valid_diff_loss
+  ema_decay: 0.9
+  warmup_valid_count: 10
+  min_delta: 0.0001
+  filename: checkpoint_best.pt
+resume_checkpoint: ''
+resume_optimizer: false
+resume_ema: false
+resume_step_override: null
+training_schedule:
+  mode: path1_v6_calibrated
+enable_swanlab: false
+log_path: outputs/diffusion/case3/lskp
+train_data_path: data/latents/case3/sn/train_data.npy
+valid_data_path: data/latents/case3/sn/valid_data.npy
+koopman:
+  enabled: true
+  mode: path1_v6_calibrated
+  prior_backend: lskp
+  checkpoint_path: outputs/prior/case3/lskp_prior.pt
+  prior_variant: absolute_contiguous
+  repr_mode: auto
+  window_size: 256
+  temporal_stride: 1
+  warmup_steps: 5000
+  koop_interval: 4
+  koop_subbatch: 4
+  sigma_max: 0.6
+  lambda_base: 0.02
+  ratio_cap_vs_diff: 0.03
+  gamma_man: 0.0
+  dyn_confidence_threshold: 0.0
+  dyn_confidence_power: 1.0
+  selective_conf_threshold: 0.15
+  selective_weight_scale: 0.65
+  selective_burst_conf_threshold: 0.25
+  selective_burst_scale: 0.75
+  loss:
+    dyn_mode: mse
+    huber_delta: 2.0
+    conditional_huber_delta: 2.0
+    man_mode: charbonnier
+    charbonnier_eps: 0.001
+  logging: {}
+use_mpi: false

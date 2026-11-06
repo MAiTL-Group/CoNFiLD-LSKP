@@ -1,0 +1,34 @@
+data_path: data/raw/case3/data.npy
+load_data_fn: load_periodic_hill_flow
+save_path: outputs/cnf/case3/sn
+coor_path: data/raw/case3/coords.npy
+lumped_latent: true
+normalizer:
+  method: '-11'
+  dim: 0
+batch_size: 64
+test_batch_size: 64
+multiGPU: 1
+seed: 42
+deterministic: false
+readin_data_shape: t N c
+batch_shape: t N c
+hidden_size: 256
+epochs: 10000
+loss_fn: MSELoss
+test_criteria: rMAE
+save_every: 20
+dims: 2
+NF:
+  name: SIRENAutodecoder_film
+  in_coord_features: 2
+  out_features: 2
+  num_hidden_layers: 17
+  hidden_features: 256
+  use_sn: true
+  sn_coeff: 1.0
+  sn_power_iter: 1
+lr:
+  nf: 0.0001
+  latents: 1.0e-05
+enable_swanlab: false

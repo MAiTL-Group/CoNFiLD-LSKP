@@ -1,0 +1,9 @@
+raw_data_npy: data/raw/case2/output.npy
+window_length: 256
+stride: 1
+split_mode: time_first
+time_split_index: 640
+time_split_index_2: 920
+purge_gap: 0
+raw_time_offset: 0
+seed: 42
