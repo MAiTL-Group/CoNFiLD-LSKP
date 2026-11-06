@@ -1,6 +1,5 @@
 # CoNFiLD-LSKP
 
-[![NeurIPS 2026](https://img.shields.io/badge/NeurIPS-2026-4b6983.svg)](https://neurips.cc/Conferences/2026)
 [![Python 3.8.18](https://img.shields.io/badge/Python-3.8.18-blue.svg)](environment.yml)
 [![PyTorch 2.2.0](https://img.shields.io/badge/PyTorch-2.2.0-ee4c2c.svg)](requirements.txt)
 [![License: Apache-2.0](https://img.shields.io/badge/License-Apache--2.0-green.svg)](LICENSE)
@@ -54,13 +53,9 @@ and arrange these arrays unchanged:
 | `data/Case3/data.npy` | `data/raw/case3/data.npy` |
 | `data/Case3/coords.npy` | `data/raw/case3/coords.npy` |
 
-Case1 is elbow flow, Case2 channel flow and Case3 periodic-hill flow.
-Case2 coordinates are constructed from its 400 by 100 grid. Case4 and
-`latents.zip` are not needed. Extraction applies the temporal split;
-keep all raw frames in their original order.
+Extraction applies the temporal split; keep all raw frames in their original order.
 
-Run the Bash examples from `CoNFiLD-LSKP/`; paths are relative to this
-directory. Use `tmux` for long jobs over SSH.
+Run the Bash examples from `CoNFiLD-LSKP/`; paths are relative to this directory. Use `tmux` for long jobs over SSH.
 
 ## 3. Train a model
 
